@@ -1,4 +1,5 @@
 const manifest = [
+    'package-lock.json',
     'HealthPlugin.js',
     'UUIDPlugin.js',
     'index.js'
