@@ -1,3 +1,12 @@
+const manifest = [
+    'HealthPlugin.js',
+    'UUIDPlugin.js',
+    'index.js'
+];
+
+const dist = 'dist';
+const bundle = dist + '/UuidService.tgz';
+
 module.exports = function(grunt) {
 
     grunt.initConfig({
@@ -5,7 +14,7 @@ module.exports = function(grunt) {
         packageModules: {
             dist: {
                 src: 'package.json',
-                dest: 'dist'
+                dest: dist
             },
         },
 
@@ -14,8 +23,8 @@ module.exports = function(grunt) {
                 files: [{
                     // Copy project files to dist dir 
                     expand: true,
-                    dest: 'dist',
-                    src: [ 'lib/**/*' ]
+                    dest: dist,
+                    src: [ manifest ]
                 }]
             },
         },
@@ -23,11 +32,11 @@ module.exports = function(grunt) {
         // tarball all the files in the dist dir into proj-dist.tar.gz 
         compress: {
             dist: {
-                options: { archive: 'dist/proj-dist.tar.gz' },
+                options: { archive: bundle },
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: 'dist',
+                    cwd: dist,
                     src: '**/*'
                 }]
             }
