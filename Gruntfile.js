@@ -19,6 +19,9 @@ module.exports = function(grunt) {
         },
 
         copy: {
+            options: {
+                punctuation: ""
+            },
             dist: {
                 files: [{
                     // Copy project files to dist dir 
@@ -29,13 +32,12 @@ module.exports = function(grunt) {
             },
         },
 
-        // tarball all the files in the dist dir into proj-dist.tar.gz 
         compress: {
             dist: {
                 options: { archive: bundle },
                 files: [{
                     expand: true,
-                    dot: true,
+                    //dot: true,
                     cwd: dist,
                     src: '**/*'
                 }]
