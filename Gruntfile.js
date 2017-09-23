@@ -6,7 +6,7 @@ const manifest = [
 ];
 
 const dist = 'dist';
-const bundle = dist + '/UuidService.tgz';
+const bundle = dist + '/bundle.tgz';
 
 module.exports = function(grunt) {
 
